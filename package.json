@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "cd packages/jamstack-scripts && node bin/jamstack-scripts.js build",
+    "changelog": "lerna-changelog",
+    "jamstack": "node tasks/jamstack.js",
+    "start": "cd packages/jamstack-scripts && node bin/jamstack-scripts.js start",
+    "test": "cd packages/jamstack-scripts && node bin/jamstack-scripts.js test --env=jsdom",
+    "format": "prettier --trailing-comma es5 --single-quote --write 'packages/*/*.js' 'packages/*/!(node_modules)/**/*.js'",
+    "precommit": "lint-staged"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "execa": "^0.10.0",
+    "husky": "^0.14.3",
+    "lerna": "^2.11.0",
+    "lerna-changelog": "^0.7.0",
+    "lint-staged": "^7.1.0",
+    "meow": "^5.0.0",
+    "multimatch": "^2.1.0",
+    "prettier": "^1.12.1",
+    "svg-term-cli": "^2.1.1",
+    "tempy": "^0.2.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --trailing-comma es5 --single-quote --write",
+      "git add"
+    ],
+    "yarn.lock": [
+      "git rm --cached"
+    ]
+  }
+}
