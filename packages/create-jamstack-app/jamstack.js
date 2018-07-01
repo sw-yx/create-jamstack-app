@@ -96,7 +96,12 @@ if (program.info) {
         System: ['OS', 'CPU'],
         Binaries: ['Node', 'npm', 'Yarn'],
         Browsers: ['Chrome', 'Edge', 'Internet Explorer', 'Firefox', 'Safari'],
-        npmPackages: ['react', 'react-dom', 'jamstack-scripts'],
+        npmPackages: [
+          'react',
+          'react-dom',
+          '@reach/router',
+          'jamstack-scripts',
+        ],
         npmGlobalPackages: ['create-jamstack-app'],
       },
       {
@@ -288,7 +293,12 @@ function run(
   useYarn
 ) {
   const packageToInstall = getInstallPackage(version, originalDirectory);
-  const allDependencies = ['react', 'react-dom', packageToInstall];
+  const allDependencies = [
+    'react',
+    'react-dom',
+    '@reach/router',
+    packageToInstall,
+  ];
 
   console.log('Installing packages. This might take a couple of minutes.');
   getPackageName(packageToInstall)
@@ -304,7 +314,7 @@ function run(
       console.log(
         `Installing ${chalk.cyan('react')}, ${chalk.cyan(
           'react-dom'
-        )}, and ${chalk.cyan(packageName)}...`
+        )}, @reach/router and ${chalk.cyan(packageName)}...`
       );
       console.log();
 
@@ -545,7 +555,12 @@ function checkAppName(appName) {
   }
 
   // TODO: there should be a single place that holds the dependencies
-  const dependencies = ['react', 'react-dom', 'jamstack-scripts'].sort();
+  const dependencies = [
+    'react',
+    'react-dom',
+    '@reach/router',
+    'jamstack-scripts',
+  ].sort();
   if (dependencies.indexOf(appName) >= 0) {
     console.error(
       chalk.red(
@@ -600,6 +615,7 @@ function setCaretRangeForRuntimeDeps(packageName) {
 
   makeCaretRange(packageJson.dependencies, 'react');
   makeCaretRange(packageJson.dependencies, 'react-dom');
+  makeCaretRange(packageJson.dependencies, '@reach/router');
 
   fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2) + os.EOL);
 }
