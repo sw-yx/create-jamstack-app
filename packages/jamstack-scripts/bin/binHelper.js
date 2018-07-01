@@ -1,5 +1,5 @@
 const updateNotifier = require('update-notifier');
-const pkg = require('../../package.json');
+const pkg = require('../../../package.json');
 const PrettyError = require('pretty-error');
 
 updateNotifier({ pkg }).notify({

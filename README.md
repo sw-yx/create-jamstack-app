@@ -1,10 +1,6 @@
-# Create JAMstack App
+# This project is still WIP. Doesn't work yet.
 
-> create JAMstack apps with parcel
-
-Preconfigured Features that come with your JAMSstack setup:
-
-* todo
+This project is put on hold for the time being while I figure out how to make Babel play nicer with Node. Sorry.
 
 ---
 
@@ -13,3 +9,12 @@ Preconfigured Features that come with your JAMSstack setup:
 ```bash
 npm i -g create-jamstack-app
 ```
+
+# Using CJA
+
+```bash
+jam stack
+cd stack
+yarn start
+```
+
