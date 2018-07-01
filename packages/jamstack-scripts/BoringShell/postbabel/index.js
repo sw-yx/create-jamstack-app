@@ -4,6 +4,12 @@ Object.defineProperty(exports, '__esModule', {
   value: true,
 });
 
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(
+  _objectWithoutProperties2
+);
+
 exports.default = function() {
   // go through getRoutes to know what to generate
   _constants.config
@@ -11,7 +17,7 @@ exports.default = function() {
     .then(function(routes) {
       routes.forEach(function(_ref) {
         var path = _ref.path,
-          props = _objectWithoutProperties(_ref, ['path']);
+          props = (0, _objectWithoutProperties3.default)(_ref, ['path']);
 
         (0, _SSR.SSR)(path)
           .then(
@@ -40,14 +46,8 @@ var _Bundle = require('./Bundle');
 
 var _constants = require('./constants');
 
-function _objectWithoutProperties(obj, keys) {
-  var target = {};
-  for (var i in obj) {
-    if (keys.indexOf(i) >= 0) continue;
-    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
-    target[i] = obj[i];
-  }
-  return target;
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
 }
 
 var fs = require('fs');
