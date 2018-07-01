@@ -85,15 +85,17 @@ checkBrowsers(paths.appPath)
 
     // ************************* new parcel hotness *************************
     // https://parceljs.org/api.html
-    const Bundler = require('parcel-bundler');
+    // const Bundler = require('parcel-bundler');
+    const Bundler = require('../BoringShell');
     const app = require('express')();
 
     function start() {
-      const file = paths.appIndexJs; // Pass an absolute path to the entrypoint here
-      const options = {}; // See options section of Parcel api docs, for the possibilities
+      // const file = paths.appIndexJs; // Pass an absolute path to the entrypoint here
+      // const options = {}; // See options section of Parcel api docs, for the possibilities
 
-      // Initialise a new bundler using a file and options
-      const bundler = new Bundler(file, options);
+      // // Initialise a new bundler using a file and options
+      // const bundler = new Bundler(file, options);
+      const bundler = Bundler();
 
       // Let express use the bundler middleware, this will let parcel handle every request over your express server
       app.use(bundler.middleware());

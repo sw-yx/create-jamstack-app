@@ -17,15 +17,13 @@ var _Chrome = require('./Chrome');
 
 var _Chrome2 = _interopRequireDefault(_Chrome);
 
-var _src = require('../../src');
+var _constants = require('./constants');
 
-var _src2 = _interopRequireDefault(_src);
+var _constants2 = _interopRequireDefault(_constants);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
-
-// TODO doublecheck, may need to shift
 
 function BoringShell(props) {
   var title = props.title,
@@ -36,7 +34,7 @@ function BoringShell(props) {
   return _react2.default.createElement(
     _Chrome2.default,
     { title: title, assets: assets },
-    _react2.default.createElement(_src2.default, null, children)
+    _react2.default.createElement(_constants2.default, null, children)
   );
 }
 

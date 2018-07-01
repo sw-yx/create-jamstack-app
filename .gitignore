@@ -13,3 +13,4 @@ yarn-error.log*
 /.changelog
 
 package-lock.json
+yarn.lock
