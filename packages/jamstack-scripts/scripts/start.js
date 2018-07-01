@@ -89,8 +89,8 @@ checkBrowsers(paths.appPath)
     const app = require('express')();
 
     function start() {
-      const file = paths.appHtml; // Pass an absolute path to the entrypoint here
-      const options = {}; // See options section of api docs, for the possibilities
+      const file = paths.appIndexJs; // Pass an absolute path to the entrypoint here
+      const options = {}; // See options section of Parcel api docs, for the possibilities
 
       // Initialise a new bundler using a file and options
       const bundler = new Bundler(file, options);

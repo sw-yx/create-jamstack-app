@@ -20,6 +20,20 @@
   "bin": {
     "jamstack-scripts": "./bin/jamstack-scripts.js"
   },
+  "scripts": {
+    "transpileBoringShell": "cd BoringShell && babel prebabel --out-dir postbabel"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-es2015-classes",
+      "transform-object-rest-spread"
+    ]
+  },
   "devDependencies": {
     "lerna": "^2.11.0",
     "react": "^16.0.0",

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@reach/router": "latest"
+  }
+}
