@@ -10,8 +10,7 @@
   "repository": "sw-yx/create-jamstack-app",
   "bin": {
     "create-jamstack-app": "./index.js",
-    "jamstack": "./index.js",
-    "jamstart": "./index.js"
+    "jam": "./index.js"
   },
   "license": "MIT",
   "engines": {

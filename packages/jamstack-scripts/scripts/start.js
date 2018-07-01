@@ -121,7 +121,7 @@ checkBrowsers(paths.appPath)
     ['SIGINT', 'SIGTERM'].forEach(function(sig) {
       process.on(sig, function() {
         // devServer.close();
-        console.log('closing CRAP');
+        console.log('closing your JAMstack app! bye!');
         process.exit();
       });
     });

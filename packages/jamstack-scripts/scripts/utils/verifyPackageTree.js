@@ -22,8 +22,6 @@ function verifyPackageTree() {
     // I have not included Babel here because plugins typically don't import Babel (so it's not affected).
     'eslint',
     'jest',
-    // 'webpack', // CRAP: swyx: dont need these
-    // 'webpack-dev-server',
   ];
   // Inlined from semver-regex, MIT license.
   // Don't want to make this a dependency after ejecting.
