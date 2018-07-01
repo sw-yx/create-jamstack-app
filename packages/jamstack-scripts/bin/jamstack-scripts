@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+require('babel-register')
+
 'use strict';
 
 // Makes the script crash on unhandled rejections instead of silently
