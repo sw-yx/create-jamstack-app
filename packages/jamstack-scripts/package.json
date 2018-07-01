@@ -19,7 +19,7 @@
     "utils"
   ],
   "bin": {
-    "jamstack-scripts": "./bin/jamstack-scripts.js"
+    "jamstack-scripts": "./bin/jamstack-scripts"
   },
   "scripts": {
     "transpileBoringShell": "cd BoringShell && babel prebabel --out-dir postbabel"
